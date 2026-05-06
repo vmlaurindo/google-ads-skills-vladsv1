@@ -52,3 +52,5 @@ For users with the Google Ads MCP server connected, skills can pull live data di
 Free to use, modify, and redistribute for personal and commercial work. If you ship something built on top of these skills, a credit is appreciated but not required.
 
 Built and maintained by [AdLume](https://adlume.co) — performance marketing infrastructure for AI-native agencies.
+
+Read the full guide on AdLume blog → https://blog.adlume.co/google-ads-claude-skills/
