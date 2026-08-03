@@ -1,4 +1,4 @@
-# Google Ads Performance Marketing Skills
+# 20 Claude Skills for Google Ads
 
 A pack of 20 production-ready Claude Skills that help agencies, freelancers, and in-house performance marketers run rigorous Google Ads work: account triage, wasted spend, structure, search terms, Quality Score, impression share, conversion tracking, offline conversion imports, Shopping feed quality, anomaly detection and root-cause diagnosis, RSA copy, Performance Max, bidding, landing page match, competitive pressure, forecasting, scaling, and recurring reporting.
 
