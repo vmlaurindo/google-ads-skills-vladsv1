@@ -105,7 +105,7 @@ For users with the Google Ads MCP server connected, skills can pull live data di
 
 ## A note on thresholds
 
-Numeric thresholds in these skills are starting heuristics, not Google-published rules. Conversion volume, vertical, seasonality, and account maturity all move them. Every skill says so in its own guardrails, and each one is written to tell you when it adjusted a threshold and why. Treat any skill that hands you a confident number without stating its assumptions as a skill worth ignoring, including these.
+Numeric thresholds in these skills are starting heuristics, not Google-published rules. Conversion volume, vertical, seasonality, and account maturity all move them. Every skill says so in its guardrails or decision rules, and each one is written to tell you when it adjusted a threshold and why. Treat any skill that hands you a confident number without stating its assumptions as a skill worth ignoring, including these.
 
 ## License & attribution
 

@@ -149,7 +149,7 @@ Band derivation method: optimistic and pessimistic come from the baseline's own 
 
 A retail account has 14 months of history, verified tracking, and spends about $40K/month at a blended 3.8x ROAS against a 4.0x target. The client asks whether increasing budget 50% still hits target within 90 days.
 
-Baseline work removes two months around a site migration and separates brand from non-brand. Brand runs at 11.2x on 18% of spend. Non-brand runs at 2.4x on 82%. The blended 3.8x was never the operating number, and every scenario is therefore built on non-brand.
+Baseline work removes two months around a site migration and separates brand from non-brand. Brand runs at 11.2x on 18% of spend. Non-brand runs at 2.2x on 82%. The blended 3.8x was never the operating number, and every scenario is therefore built on non-brand.
 
 Seasonality across two comparable years shows a repeating lift in the forecast window, indexed at roughly 1.15 for two of the three months. Trend on non-brand ROAS over the last 90 days is mildly negative, about 4% decline per month, while average CPC rose 9%.
 
@@ -157,11 +157,11 @@ Spend response is measurable in this account because budgets moved twice last ye
 
 Ninety-day non-brand output, all figures as ranges:
 
-- hold at $40K: optimistic 2.7x, expected 2.4x, pessimistic 2.0x
-- moderate at $50K: optimistic 2.5x, expected 2.2x, pessimistic 1.8x
-- aggressive at $60K: optimistic 2.3x, expected 1.9x, pessimistic 1.5x, extrapolated
+- hold at $40K: optimistic 2.5x, expected 2.2x, pessimistic 1.9x
+- moderate at $50K: optimistic 2.3x, expected 2.0x, pessimistic 1.7x
+- aggressive at $60K: optimistic 2.1x, expected 1.8x, pessimistic 1.4x, extrapolated
 
-Blended figures including brand land the moderate expected case near 3.6x, below the 4.0x target. Verdict: the 4.0x blended target is unlikely at a 50% increase on current efficiency. It becomes plausible only if non-brand conversion rate improves roughly 15% or the seasonal lift lands at the top of its historical range.
+Blended figures including brand land the moderate expected case near 3.4x, below the 4.0x target. Verdict: the 4.0x blended target is unlikely at a 50% increase on current efficiency. It becomes plausible only if non-brand conversion rate improves roughly 15% or the seasonal lift lands at the top of its historical range.
 
 Named invalidators: the seasonal index rests on two years, the 50% scenario has no observed precedent, one competitor was escalating in the last period, and two campaigns are exposed to the September 2026 auto-upgrade which sits inside the horizon.
 

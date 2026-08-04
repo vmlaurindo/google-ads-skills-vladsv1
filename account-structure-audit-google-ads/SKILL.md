@@ -76,6 +76,8 @@ Required columns where available:
 4. Confirm whether imported offline conversions or value-based bidding are used.
 5. Check for recent structural changes that may distort the data.
 
+Upgrade exposure check before proposing structure: campaigns using Dynamic Search Ads, automatically created assets, or campaign-level broad match are subject to auto-upgrade to AI Max from September 2026. Flag them before recommending consolidation, splits, or rebuilds the upgrade would change.
+
 ## Analysis workflow
 
 1. Map the account skeleton:

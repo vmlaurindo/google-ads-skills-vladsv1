@@ -188,7 +188,7 @@ Severity to action:
 
 Worked micro-example: baseline Tuesdays spend $500 with SD $13; anomaly Tuesday $570 gives z = (570-500)/13 = +5.4 -> significant. The same day's 6 conversions vs baseline mean 9.7 with SD 0.6 would give z = -6.2, but 6 conversions is below the daily floor, so CPA is judged on the week, not the day.
 
-For long daily exports, run `../scripts/anomaly_scan.py` to compute baselines, z-scores and severity tiers per campaign deterministically.
+For long daily exports, run `../scripts/anomaly_scan.py` to compute baselines, z-scores and severity tiers per campaign deterministically (it covers cost, clicks, conversions and CPA; CVR stays a manual weekly-grain check).
 
 ## Practical example
 

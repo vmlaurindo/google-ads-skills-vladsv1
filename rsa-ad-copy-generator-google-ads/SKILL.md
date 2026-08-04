@@ -117,7 +117,7 @@ Mandatory, after every generated set and before showing output:
 3. Missing-input paths: no brand voice supplied -> derive tone from the landing page copy and label the assumption; no proof points supplied -> ask, never invent numbers, customers, or awards; no keyword list -> generate from the landing page's own vocabulary and say so.
 4. Verify no asset duplicates another's first 20 characters (near-duplicates waste asset slots).
 
-2026 note: call-only ads were deprecated in February 2026 - never generate them; if auto-created assets are on, note that Google may serve its own variants next to this set.
+2026 note: call-only ads were deprecated in February 2026 - never generate them. Campaigns with auto-created assets, DSA, or campaign-level broad match auto-upgrade to AI Max from September 2026; with auto-created assets on, Google may serve its own variants next to this set.
 
 ## Practical example
 

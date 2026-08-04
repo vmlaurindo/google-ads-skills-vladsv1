@@ -142,6 +142,12 @@ Do not recommend cutting when:
 - data is inside the conversion lag window,
 - the segment has too little spend or too few clicks to judge.
 
+Reducible-spend formula (so the headline number is reproducible): for zero-conversion waste candidates, reducible = 100% of segment spend; for weak segments kept under review, reducible = spend minus (conversions x target CPA), floored at zero; report the two sums separately by confidence tier and never as one combined number [heuristic].
+
+Multiple-comparisons caution: scanning device x daypart x geo produces hundreds of cells, so a few zero-conversion cells are expected by chance at any account volume; only cells that also clear the spend floor and persist across two consecutive windows enter the waste table [heuristic].
+
+Note on floors: the least disruptive action here (add a negative keyword) may fire earlier under search-terms-hygiene's lower per-term floor (1x target CPA); the 1.5-2.0x floor above governs segment cuts, which are costlier to reverse.
+
 Vertical adjustments: lead gen ranks on CRM-verified lead value where available and expects longer lag, so widen the review window before calling waste; ecommerce ranks on ROAS and margin band, and a low-ROAS segment with high assisted value is `review`, not waste.
 
 ## Practical example

@@ -143,7 +143,7 @@ Do not issue a diagnosis when:
 
 Prefer a small number of confirmed causes over a complete list of possible ones. Multiple causes commonly coexist, and saying so is more useful than forcing one.
 
-Mix-shift formula (the step operators fumble): recompute the spike window's blended CPA using baseline spend weights - for each segment, baseline_weight x spike_CPA, summed. If the reweighted CPA is close to baseline, the spike is mix (money moved to worse segments), not deterioration inside segments. `../scripts/spike_decompose.py` computes this and the CPC-vs-CVR split deterministically.
+Mix-shift formula (the step operators fumble): for each segment, baseline spend weight x that segment's spike CPA, summed over segments with spike conversions - a weighted arithmetic mean of segment CPAs, which is what `../scripts/spike_decompose.py` computes (not a re-blended cost/conversions ratio). Verdict threshold: if the reweighted CPA sits within 30% of the baseline-to-spike distance from baseline, the move is mostly mix [heuristic - the script's own threshold]. If the reweighted CPA is close to baseline, the spike is mix (money moved to worse segments), not deterioration inside segments. `../scripts/spike_decompose.py` computes this and the CPC-vs-CVR split deterministically.
 
 ## Practical example
 
@@ -151,11 +151,11 @@ An account spending roughly $22K a month at a target CPA of $110 reports CPA ris
 
 Decomposition rules that out immediately. CPC moved from $4.10 to $4.35, a modest rise. Conversion rate fell from 3.9% to 2.2%. This is a conversion problem, not an auction problem, and the competitor theory is excluded in the first step.
 
-Cause 1 partly confirms. One of three primary conversion actions, a phone-call action, recorded 84 conversions in the baseline window and 11 in the spike window, while call-related click volume held steady. A site release dated two days before the deviation began matches the drop. This alone accounts for roughly $48 of the $83 CPA gap, and it is not a performance problem at all, it is unrecorded conversions.
+Cause 1 partly confirms. One of three primary conversion actions, a phone-call action, recorded 84 conversions in the baseline window and 11 in the spike window, while call-related click volume held steady. A site release dated two days before the deviation began matches the drop. This alone accounts for roughly $44 of the $83 CPA gap, and it is not a performance problem at all, it is unrecorded conversions.
 
 Cause 2 confirms a second contributor. Change history shows a target CPA reduction on the largest campaign, applied one day into the window. Spend fell 22% on that campaign, which was the account's cheapest converter, pushing the mix toward two expensive campaigns.
 
-Cause 3 quantifies that mix effect. Recomputing spike-window CPA at baseline spend weights gives $151 rather than $187, so roughly $36 of the gap is mix rather than decay.
+Cause 3 quantifies that mix effect. Recomputing spike-window CPA at baseline spend weights gives $157 rather than $187, so roughly $30 of the gap is mix rather than decay.
 
 Causes 4 through 7 are examined and returned as excluded or possible. Impression share lost to rank moved by under two points. Auction insights show no new entrant. Prior-year data shows no equivalent seasonal dip.
 
@@ -182,7 +182,7 @@ For each cause include:
 - finding
 - evidence: the specific metric, change entry, date, or entity
 - share of the CPA gap explained, in currency or percentage points
-- severity: critical / material / minor
+- severity: blocking / material / minor
 - confidence: confirmed / likely / possible / excluded
 
 Include excluded causes explicitly. Showing what was ruled out is often more valuable to the client than the finding itself.

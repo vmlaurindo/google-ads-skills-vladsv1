@@ -132,11 +132,11 @@ Score anchors (so a 2 and a 4 mean the same thing on every run):
 - 2: nominally present, materially weak (benefit claimed without substance, keyword stuffed).
 - 1: absent or harmful.
 
-Score to action: average 2 or below -> rewrite the ad; 3 -> keep running, test a challenger; 4+ -> keep as the template for new variants.
+Score to action (continuous bands, no holes): average below 2.5 -> rewrite the ad; 2.5 to 3.5 -> keep running, test a challenger; above 3.5 -> keep as the template for new variants.
 
 Evidence floors: an asset needs ~500 impressions before its platform performance label (Low / Good / Best) is trusted [heuristic]; below that, judge on craft only and say so. Ad Strength is a coverage signal, not a performance verdict - report it, do not optimize toward it against evidence.
 
-2026 exposure: campaigns with auto-created assets enabled may be serving Google-generated variants alongside these; review what actually served, not only what was authored.
+2026 exposure: campaigns with auto-created assets, Dynamic Search Ads, or campaign-level broad match auto-upgrade to AI Max from September 2026, and auto-created assets may already be serving Google-generated variants alongside these; review what actually served, not only what was authored.
 
 ## Practical example
 

@@ -112,7 +112,7 @@ Optional but useful:
 
 ## Decision rules: negative keywords
 
-Evidence floors before negating [heuristic]: a single term needs 10+ clicks or spend of 1x target CPA with zero conversions to be negated on performance; relevance-only negations (the term is unambiguously not the business) have no floor. A pattern group (terms sharing a token) can be negated together at 20+ combined clicks or 2x target CPA with zero conversions - group by 1-3 word n-grams before judging term by term. Long sales cycles extend judgment to the cycle window.
+Evidence floors before negating [heuristic]: a single term needs 10+ clicks or spend of 1x target CPA with zero conversions to be negated on performance (deliberately lower than wasted-spend-finder's 1.5-2.0x segment-cut floor: negating one term is cheap to reverse, cutting a segment is not); relevance-only negations (the term is unambiguously not the business) have no floor. A pattern group (terms sharing a token) can be negated together at 20+ combined clicks or 2x target CPA with zero conversions - group by 1-3 word n-grams before judging term by term. Long sales cycles extend judgment to the cycle window.
 
 Vertical adjustments: lead gen treats zero-conversion terms with CRM-qualified history as converters; ecommerce weighs revenue and assisted value, not conversion count alone.
 
