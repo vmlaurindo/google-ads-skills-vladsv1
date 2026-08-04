@@ -120,6 +120,24 @@ Score each RSA from 1–5 on:
 - compliance safety,
 - testing usefulness.
 
+## Decision rules
+
+Every threshold below is a starting heuristic, not a Google rule. When one does not fit the account's volume or vertical, say which one you adjusted and why.
+
+Score anchors (so a 2 and a 4 mean the same thing on every run):
+
+- 5: fulfills the dimension with evidence (keyword present naturally, benefit concrete, proof specific).
+- 4: fulfills it with minor polish possible.
+- 3: present but generic - would fit any competitor's ad.
+- 2: nominally present, materially weak (benefit claimed without substance, keyword stuffed).
+- 1: absent or harmful.
+
+Score to action: average 2 or below -> rewrite the ad; 3 -> keep running, test a challenger; 4+ -> keep as the template for new variants.
+
+Evidence floors: an asset needs ~500 impressions before its platform performance label (Low / Good / Best) is trusted [heuristic]; below that, judge on craft only and say so. Ad Strength is a coverage signal, not a performance verdict - report it, do not optimize toward it against evidence.
+
+2026 exposure: campaigns with auto-created assets enabled may be serving Google-generated variants alongside these; review what actually served, not only what was authored.
+
 ## Practical example
 
 B2B SaaS client running 14 ad groups in Search campaigns, total 47 RSAs, $11K/month spend. Claude reviews each RSA for intent match, message diversity, asset coverage, and compliance. Findings: 8 ad groups have 4+ duplicate-meaning headlines (same claim phrased five ways, blocking algorithmic asset rotation), 11 ad groups missing audience qualifier (no headline addressing buyer role or company size), all 47 RSAs missing proof asset (no statistics, customer counts, ratings, or named outcomes), 3 RSAs use "best in class" or "leading platform" superlatives without verifiable backing (Google policy risk). Quality score average: 2.8/5 across 8 dimensions. Top priorities: rewrite 23 redundant assets to free positions for differentiation, add 2 proof headlines per ad group (28 new assets), remove 3 superlative claims. Strongest assets identified: 7 RSAs with explicit ROI mention scored 4.5+ — keep unchanged and use as voice template for rewrites.
@@ -169,6 +187,14 @@ Show count of assets by message role:
 - offer
 - qualifier
 - objection handler
+
+### Route to next
+
+Rewrites -> rsa-ad-copy-generator-google-ads. Message-vs-page doubts -> landing-page-match-scorer-google-ads. Quality Score context -> quality-score-analysis-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

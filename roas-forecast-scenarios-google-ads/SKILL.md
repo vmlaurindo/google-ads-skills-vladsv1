@@ -143,6 +143,8 @@ Widen the bands, do not narrow the story, when:
 - headroom is rank-limited rather than budget-limited,
 - the window crosses the September 2026 AI Max auto-upgrade for exposed campaigns.
 
+Band derivation method: optimistic and pessimistic come from the baseline's own variability - use +/-1 standard deviation of the trailing 90-day efficiency (CPA or ROAS) for the near horizon, widening by roughly half a standard deviation per additional 30 days of horizon [heuristic]. State the numbers used so the reader can reproduce the bands.
+
 ## Practical example
 
 A retail account has 14 months of history, verified tracking, and spends about $40K/month at a blended 3.8x ROAS against a 4.0x target. The client asks whether increasing budget 50% still hits target within 90 days.

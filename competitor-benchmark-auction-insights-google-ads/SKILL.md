@@ -144,6 +144,8 @@ Classify as **insufficient data** when:
 - the scope changed between periods,
 - auction volume in the segment is too thin for the rates to be stable.
 
+Validity caveats: auction insight shares on under ~1,000 impressions in the window are unstable - no verdict below that [heuristic]. A campaign-set change mid-window silently invalidates the period comparison; confirm the campaign list is constant before trending shares. Floored/capped IS values ("< 10%") are bounds, not numbers.
+
 ## Practical example
 
 An ecommerce account spending roughly $26K/month reports that non-brand CPCs rose from $1.85 to $2.60 over one quarter while conversions fell 14%. The obvious reading is a competitor squeeze.

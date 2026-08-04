@@ -138,6 +138,8 @@ Route rather than resolve when:
 - the cause is unclear after change history and mix analysis,
 - the fix would take longer than the digest cycle.
 
+Variance band method: "normal weekly variance" is computed, not felt - use the trailing 8 weeks of the metric, flag only moves outside mean +/- 2 standard deviations, or outside +/-15% when history is shorter [heuristic]. Spend is always reported regardless of the band.
+
 ## Practical example
 
 A lead-gen account spending about $22K/month, target CPA $130, reporting week ending Sunday.

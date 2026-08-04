@@ -123,7 +123,7 @@ Optional but useful:
    - duplicate structure.
 7. Build a budget movement plan.
 
-## Scaling rules
+## Decision rules: scaling
 
 Prefer increasing budget when:
 
@@ -153,6 +153,8 @@ Consider reducing or pausing when:
 - the campaign is not strategically required.
 
 ## Budget increase guidance
+
+Cadence: one increment per 72 hours or one conversion-delay window, whichever is longer [heuristic]; each 20%+ change can re-enter learning, so judge the effect only after the window closes. Do not move tCPA / tROAS targets and budgets in the same step - one variable at a time; when scaling with a target, expect to loosen the target slightly as volume grows and say so in the plan. 2026 note: campaigns exposed to the September 2026 AI Max auto-upgrade (DSA, auto-created assets, campaign-level broad match) should not anchor a long scaling program without naming the upgrade as a moving part.
 
 Use conservative scaling by default:
 
@@ -215,6 +217,14 @@ Include:
 - rollback conditions,
 - next scale checkpoint.
 
+### Route to next
+
+Pre-scale readiness doubts -> account-triage-google-ads. Bidding stability -> bidding-strategy-sanity-check-google-ads. Forecast for the proposed budget -> roas-forecast-scenarios-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Do not recommend adding budget based only on strong CPA or ROAS; require evidence of additional available demand.
@@ -222,3 +232,4 @@ Include:
 - Do not cut strategic campaigns without labeling the trade-off.
 - Do not recommend large budget jumps without explaining learning and efficiency risk.
 - Always separate guaranteed budget movement from estimated performance impact.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

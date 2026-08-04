@@ -119,7 +119,7 @@ Use these as default heuristics, not hard laws.
 A segment may be a safe waste candidate when:
 
 - spend is at least 1.5–2.0x target CPA,
-- conversions are zero or materially below expectation,
+- conversions are zero or materially below expectation (expected conversions = clicks x the account's baseline CVR; 3+ expected with 0 actual is the signal, below 3 expected is `needs_data` [heuristic]),
 - click volume is sufficient relative to expected CVR,
 - conversion lag has passed,
 - no assisted conversion or high-value downstream signal exists,
@@ -141,6 +141,8 @@ Do not recommend cutting when:
 - tracking is unreliable,
 - data is inside the conversion lag window,
 - the segment has too little spend or too few clicks to judge.
+
+Vertical adjustments: lead gen ranks on CRM-verified lead value where available and expects longer lag, so widen the review window before calling waste; ecommerce ranks on ROAS and margin band, and a low-ROAS segment with high assisted value is `review`, not waste.
 
 ## Practical example
 
@@ -197,6 +199,14 @@ Include:
 - rollback conditions,
 - expected trade-off between spend reduction and conversion volume.
 
+### Route to next
+
+Search-term-level cleanup -> search-terms-hygiene-google-ads. Zero conversions that might be a tracking artifact -> conversion-tracking-audit-google-ads. Structural fragmentation behind the waste -> account-structure-audit-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Never present projected savings as guaranteed savings.
@@ -204,3 +214,4 @@ Include:
 - Explain assumptions behind any projection.
 - Prefer conservative recommendations when conversion volume is low.
 - If data quality is weak, prioritize measurement fixes over cuts.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

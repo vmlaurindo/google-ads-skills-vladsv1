@@ -143,6 +143,8 @@ Do not issue a diagnosis when:
 
 Prefer a small number of confirmed causes over a complete list of possible ones. Multiple causes commonly coexist, and saying so is more useful than forcing one.
 
+Mix-shift formula (the step operators fumble): recompute the spike window's blended CPA using baseline spend weights - for each segment, baseline_weight x spike_CPA, summed. If the reweighted CPA is close to baseline, the spike is mix (money moved to worse segments), not deterioration inside segments. `../scripts/spike_decompose.py` computes this and the CPC-vs-CVR split deterministically.
+
 ## Practical example
 
 An account spending roughly $22K a month at a target CPA of $110 reports CPA rising from $104 to $187 in a two-week window. The client assumes competitors are bidding harder.
@@ -211,6 +213,10 @@ Order the fixes by dependency, not by size. Measurement fixes come first because
 - Define what "recovered" means numerically, in advance.
 - Name the rollback condition for each fix.
 - Do not apply more than one significant change at a time to a campaign under diagnosis, or the next measurement will be uninterpretable.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

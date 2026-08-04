@@ -121,7 +121,7 @@ Use flexible heuristics. Do not treat them as universal rules.
 
 Potential consolidation candidate:
 
-- campaign has low conversion volume,
+- campaign has low conversion volume (under ~15-30 conversions per month on an automated strategy, or a daily budget under ~1x target CPA [heuristic] - the Practical example's numbers, promoted to the rule),
 - campaign shares intent, geography, product, or landing page with another campaign,
 - campaign uses the same bid strategy and objective,
 - segmentation does not produce materially different performance or control value.
@@ -145,6 +145,8 @@ Prefer migration over rebuild when:
 - historical learning is valuable,
 - changes can be made gradually,
 - the business cannot tolerate volume disruption.
+
+Migration mechanics every consolidation plan must state: what happens to shared negative lists, audiences, and historical data (significant edits reset learning), how budget carries over, what the naming becomes, and a cap of 2-3 structural changes per week so reads stay clean [heuristic]. A merge is only recommended when the merged campaign clears the volume floor; merging two starving campaigns into one starving campaign is not a fix.
 
 ## Practical example
 
@@ -205,6 +207,14 @@ Provide a recommended campaign structure with:
 - targeting rules,
 - notes.
 
+### Route to next
+
+Bid strategy questions raised by consolidation -> bidding-strategy-sanity-check-google-ads. Conversion volume doubts -> conversion-tracking-audit-google-ads. Post-cleanup scaling -> scaling-planner-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Do not recommend consolidation just to simplify reporting.
@@ -212,3 +222,4 @@ Provide a recommended campaign structure with:
 - Do not promise that historical learning will be preserved after rebuilds.
 - Do not ignore business logic such as regions, margins, sales teams, inventory, or offline quality.
 - Treat "30–50 conversions per month" as a heuristic, not a fixed rule.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

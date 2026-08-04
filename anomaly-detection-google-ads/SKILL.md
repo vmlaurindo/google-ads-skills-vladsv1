@@ -168,6 +168,27 @@ ROAS down:
 - value tracking issue,
 - more low-intent traffic.
 
+## Decision rules
+
+Every threshold below is a starting heuristic, not a Google rule. When one does not fit the account's volume or vertical, say which one you adjusted and why.
+
+Volume guards before any z-score is trusted:
+
+- Ratio metrics (CPA, CVR) on days below ~5 conversions are unreadable at daily grain; z-score cost and clicks daily, and judge conversion metrics at the weekly grain instead [heuristic].
+- A z-score needs the baseline too: fewer than 8 usable baseline days (or 3 same-weekday points) means no z-score, only a descriptive delta labeled as such.
+- Same-weekday baseline is the default, not an option; a Monday is compared with Mondays.
+
+Severity to action:
+
+- |z| under 2 at adequate volume -> within normal variance; verdict is monitor, and the output says so instead of inventing a driver.
+- |z| 2-3 -> investigate; split by campaign, device, geo and check the change log.
+- |z| over 3 -> significant; attribution starts immediately, tracking changes first.
+- A logged tracking, site, or upgrade event inside the window makes the anomaly significant regardless of z; platform statistics never outrank a known change. Campaigns exposed to the September 2026 AI Max auto-upgrade (DSA, auto-created assets, campaign-level broad match): the upgrade event itself is a candidate cause.
+
+Worked micro-example: baseline Tuesdays spend $500 with SD $13; anomaly Tuesday $570 gives z = (570-500)/13 = +5.4 -> significant. The same day's 6 conversions vs baseline mean 9.7 with SD 0.6 would give z = -6.2, but 6 conversions is below the daily floor, so CPA is judged on the week, not the day.
+
+For long daily exports, run `../scripts/anomaly_scan.py` to compute baselines, z-scores and severity tiers per campaign deterministically.
+
 ## Practical example
 
 E-commerce client, $28K/month Google Ads spend. User reports "CPA spiked yesterday" without clear cause. Claude builds 90-day baselines and runs z-score analysis on yesterday's metrics. Findings: account-level CPA jumped from $42 to $67 (z-score 2.7, severe), spend stable at $1,050, conversions dropped 38% day-over-day. Decomposition by segment: 60% of CPA increase from one campaign where mobile traffic share rose from 41% to 67% after a competitor disappeared from desktop auctions (mobile CVR is 4x lower in this account); 25% from broad match drift on three keywords that started matching competitor brand queries (CTR up, CVR down); 15% from new auction pressure during 9-11am window (CPC up 18%). Hypotheses ranked by evidence strength. Recommended next diagnostics: (1) check competitor activity in Auction Insights, (2) review search terms for the 3 broad keywords, (3) review mobile bid adjustment. Caveat flagged: data is within the 24-hour conversion lag window for ~22% of typical conversions; recheck in 48h before acting.
@@ -218,6 +239,14 @@ Break down by:
 - network,
 - conversion action,
 - search term or search category where available.
+
+### Route to next
+
+Confirmed CPA anomaly -> cpa-spike-diagnosis-google-ads for decomposition. Tracking-shaped anomaly -> conversion-tracking-audit-google-ads. Auction-shaped anomaly -> competitor-benchmark-auction-insights-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

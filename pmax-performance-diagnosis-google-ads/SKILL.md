@@ -152,6 +152,17 @@ Cannibalization risk:
 - Final URL expansion sending traffic to core Search pages,
 - PMax capturing cheap branded conversions.
 
+## Decision rules
+
+Every threshold below is a starting heuristic, not a Google rule. When one does not fit the account's volume or vertical, say which one you adjusted and why.
+
+- Brand cannibalization case: brand terms at 20%+ of search insights categories or spend while an active brand Search campaign exists [heuristic] -> recommend brand exclusions and state the tradeoff honestly: reported PMax ROAS will fall, and that fall is the previously hidden brand share, not new damage.
+- Asset group floor: groups under ~10-15 conversions per month are consolidation candidates [heuristic]; more groups than conversion volume can feed is the same fragmentation rule as campaigns.
+- Spend concentration: top products or one asset group absorbing 70%+ of spend [heuristic] is a flag - healthy when its own ROAS beats target, a feed-mix constraint when it merely matches average. Feed problems route to shopping-feed-qa-google-ads.
+- Signal outranks structure: with a weak, duplicated, or too-shallow conversion signal, no structural PMax recommendation stands until conversion-tracking-audit-google-ads passes - PMax amplifies whatever it is fed.
+- Channel-split inference without official reporting is labeled an estimate, every time.
+- 2026 exposure: campaigns with DSA, auto-created assets, or campaign-level broad match auto-upgrade to AI Max from September 2026; diagnosis of those campaigns names the upgrade as a moving part before recommending long structural work.
+
 ## Practical example
 
 D2C subscription brand running PMax + Search Brand campaigns, $24K/month total. ROAS dropped from 4.2 to 2.8 over 30 days. Claude diagnoses: search insights show 67% of PMax spend going to brand-heavy categories (significant cannibalization with $4K/month Search Brand campaign — PMax wins cheap branded conversions, Search Brand looks weaker by comparison); 3 of 7 asset groups under 5 conversions/month (insufficient for asset rotation and learning); audience signals are "website visitors" and "similar customers" only (no first-party CRM upload despite a 12k subscriber list); feed contains 4 disapproved products consuming impression spend; tROAS target was lowered from 3.5 to 2.5 six weeks ago, which expanded auctions into low-quality traffic. Health rating: not ready for scaling. Highest-priority fixes: (1) brand exclusion list, (2) consolidate 3 weak asset groups into 1 stronger, (3) upload CRM list as audience signal, (4) fix or remove 4 disapproved products, (5) raise tROAS back toward 3.5 with a 14-day learning period. Scaling readiness: only after fixes 1–4 land.
@@ -213,6 +224,14 @@ Group recommendations into:
 - creative fixes,
 - exclusions and brand controls,
 - Search/PMax coordination.
+
+### Route to next
+
+Feed findings -> shopping-feed-qa-google-ads. Signal doubts -> conversion-tracking-audit-google-ads. Budget role questions -> account-triage-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

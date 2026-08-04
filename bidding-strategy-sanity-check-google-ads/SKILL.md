@@ -107,7 +107,7 @@ Required fields where available:
    - using tROAS without reliable values.
 7. Recommend bidding setup by campaign.
 
-## Strategy fit heuristics
+## Decision rules: strategy fit heuristics
 
 Manual CPC may fit when:
 
@@ -135,9 +135,14 @@ Maximize Conversions may fit when:
 Target CPA may fit when:
 
 - conversion tracking is reliable,
-- conversion volume is sufficient,
-- CPA target is realistic vs history,
+- conversion volume is sufficient (~30 conversions in the last 30 days per campaign [platform guidance range - verify current docs]; below that, prefer Maximize Conversions or consolidate),
+- CPA target is realistic vs history (a target more than 15-20% better than the trailing 30-day actual is a starvation flag [heuristic]),
 - conversion quality is acceptable.
+
+Cadence and scope rules that apply to every strategy above:
+
+- More than one target change per campaign per 2 weeks keeps resetting learning [heuristic].
+- Portfolio bid strategies and shared budgets are checked as one unit: a per-campaign read of a portfolio member is misleading; name the portfolio and judge it whole.
 
 Maximize Conversion Value may fit when:
 
@@ -202,6 +207,14 @@ Include:
 - monitoring metrics,
 - rollback conditions.
 
+### Route to next
+
+Signal doubts before any change -> conversion-tracking-audit-google-ads. Volume too thin for targets -> account-structure-audit-google-ads (consolidation). Ready to add budget -> scaling-planner-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Do not recommend Smart Bidding if conversion tracking is unreliable.
@@ -209,3 +222,4 @@ Include:
 - Do not recommend aggressive target changes without explaining risk.
 - Do not judge bidding in isolation from budget, conversion volume, and tracking quality.
 - Do not treat default conversion volume thresholds as universal rules.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

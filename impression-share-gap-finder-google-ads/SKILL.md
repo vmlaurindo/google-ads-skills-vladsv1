@@ -110,6 +110,8 @@ Produce three lists:
 
 ## Decision rules
 
+Export caveat first: Google floors and caps impression share values ("< 10%", "> 90%"). Treat those rows as bounds, not numbers - budget-vs-rank arithmetic built on a bounded value carries the bound into the conclusion, and the output says so on exactly those campaigns.
+
 Use these as default heuristics, not hard laws. Adjust to the account's volume, vertical, and competitive intensity.
 
 Treat a campaign as a **budget case** when:
@@ -206,6 +208,10 @@ For campaigns classified as rank cases, name what has to change before funding: 
 - Track CPA and conversion volume together. Volume gained at a broken CPA is not a win.
 - Define the rollback threshold before the increase, not after.
 - Expect the share figures to move slower than spend.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

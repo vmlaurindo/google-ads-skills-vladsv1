@@ -131,6 +131,8 @@ Recommend a **new page rather than a rewrite** when:
 
 Do not issue a verdict on a page you have not read in full, including the content below the fold and the form itself.
 
+Default weight sets by page job [heuristic]: lead gen form page - message match 30%, offer clarity 25%, friction 25%, trust 20%; ecommerce product page - offer/price clarity 30%, message match 25%, trust 25%, friction 20%. State which set was used or what replaced it. CVR comparisons per URL need ~200 clicks before they carry a claim [heuristic].
+
 ## Practical example
 
 An account for a commercial roofing contractor spends roughly $12K per month and sends four campaigns to two landing pages. The client's complaint is that CTR looks healthy but the phone is quiet.

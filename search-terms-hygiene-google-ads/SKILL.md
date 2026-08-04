@@ -110,7 +110,11 @@ Optional but useful:
    - broad, only when safe.
 8. Flag keywords that require match type tightening or structural changes rather than only negatives.
 
-## Negative keyword rules
+## Decision rules: negative keywords
+
+Evidence floors before negating [heuristic]: a single term needs 10+ clicks or spend of 1x target CPA with zero conversions to be negated on performance; relevance-only negations (the term is unambiguously not the business) have no floor. A pattern group (terms sharing a token) can be negated together at 20+ combined clicks or 2x target CPA with zero conversions - group by 1-3 word n-grams before judging term by term. Long sales cycles extend judgment to the cycle window.
+
+Vertical adjustments: lead gen treats zero-conversion terms with CRM-qualified history as converters; ecommerce weighs revenue and assisted value, not conversion count alone.
 
 Use negative exact when:
 
@@ -199,6 +203,14 @@ For each problematic keyword include:
 - conversions
 - recommended fix
 
+### Route to next
+
+Wasted spend beyond search terms -> wasted-spend-finder-google-ads. Broad match drift tied to bidding -> bidding-strategy-sanity-check-google-ads. Lead quality doubts on converting terms -> offline-conversion-import-audit-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Do not recommend negatives that may block profitable variants.
@@ -206,3 +218,4 @@ For each problematic keyword include:
 - Do not assume all zero-conversion queries are waste.
 - Do not ignore assisted conversions or offline quality.
 - Do not present search terms report as complete visibility into all queries.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

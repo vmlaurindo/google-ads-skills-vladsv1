@@ -76,7 +76,7 @@ If you are new to the pack, run them in this sequence rather than picking at ran
 ```bash
 git clone https://github.com/mardab96/google-ads-skills.git
 mkdir -p ~/.claude/skills
-cp -r google-ads-skills/*-google-ads ~/.claude/skills/
+cp -r google-ads-skills/*-google-ads google-ads-skills/scripts ~/.claude/skills/
 ```
 
 That copies the 20 skill folders into your user-level skills directory. Use `.claude/skills/` at the root of a project instead if you want them scoped to one project. Start a new Claude Code session and the skills activate automatically when their description matches the conversation.

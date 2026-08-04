@@ -108,6 +108,17 @@ When writing, ensure:
 9. Label each asset by message role.
 10. Provide optional pinning recommendations only when justified.
 
+## Verification pass
+
+Mandatory, after every generated set and before showing output:
+
+1. Re-count every headline and description character by character, including spaces and punctuation. Headlines: 30 characters max. Descriptions: 90 characters max. Any overflow -> rewrite that asset and re-count; never trim by truncation.
+2. Non-English markets run long: German and Polish translations of an English draft typically grow 20-30%, so draft against a ~25-character headline budget in those languages [heuristic].
+3. Missing-input paths: no brand voice supplied -> derive tone from the landing page copy and label the assumption; no proof points supplied -> ask, never invent numbers, customers, or awards; no keyword list -> generate from the landing page's own vocabulary and say so.
+4. Verify no asset duplicates another's first 20 characters (near-duplicates waste asset slots).
+
+2026 note: call-only ads were deprecated in February 2026 - never generate them; if auto-created assets are on, note that Google may serve its own variants next to this set.
+
 ## Practical example
 
 Local services client (HVAC contractor) launching new ad group for "emergency furnace repair". Inputs provided: landing page promise "24/7 service, 1-hour response time", brand voice "trustworthy, urgent, family-owned", target market: Chicago metro, must-mention 4.9-star rating from 850+ reviews, must-avoid medical-style guarantees. Claude generates 15 headlines spanning message roles: 4 keyword-relevance ("Emergency Furnace Repair", "Furnace Not Working?"), 3 proof ("4.9★ from 850+ Reviews", "Family-Owned Since 1998"), 3 CTA ("Call Now - 1hr Response", "Schedule Service 24/7"), 3 urgency ("Today's Service Available", "24/7 Emergency Calls"), 2 audience qualifier ("Chicago Metro - Local Tech"). All 15 within 30 chars. Plus 4 descriptions combining benefit + offer + proof + CTA, all within 90 chars. Pinning recommendation: pin "Emergency Furnace Repair" to H1 only if compliance requires keyword presence (otherwise leave unpinned for full asset rotation). Testing notes: hypothesis is that proof + speed combination outperforms pure urgency in this category.
@@ -150,6 +161,14 @@ Include:
 - expected impact: CTR, CVR, lead quality, or relevance,
 - what to compare against.
 
+### Route to next
+
+Grading what already runs -> rsa-ad-copy-review-google-ads. Page alignment for the new copy -> landing-page-match-scorer-google-ads.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
+
 ## Guardrails
 
 - Do not exceed character limits.
@@ -158,3 +177,4 @@ Include:
 - Do not use competitor names unless the user explicitly approves competitor advertising.
 - Do not create repetitive headlines that only rephrase the same claim.
 - Do not recommend excessive pinning unless needed for compliance, brand, or message control.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

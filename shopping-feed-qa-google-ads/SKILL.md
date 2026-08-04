@@ -148,6 +148,8 @@ Treat the feed as **healthy** when:
 
 Do not attribute weak Shopping performance to the feed when impression coverage is broad, data is accurate, and the actual constraint is budget, bid strategy, or margin. Say so and route elsewhere.
 
+Blocking threshold starting point: disapprovals or critical warnings touching 5%+ of catalog revenue (not SKU count) are treated as blocking [heuristic]; price or availability mismatches are blocking at any share. Fix-at-scale rule: 10+ SKUs sharing one defect get a supplemental feed or feed rule recommendation, not per-SKU edits.
+
 ## Practical example
 
 A homeware retailer runs Shopping and one Performance Max campaign on a catalogue of 4,200 items, spending roughly $22K per month against a target ROAS of 400%. The complaint is that Performance Max spends nearly all of its budget on the same twelve products.

@@ -165,6 +165,8 @@ Recommend an **earlier proxy stage** rather than the true outcome when the true 
 
 Do not recommend switching bidding onto a qualified action until that action has demonstrated stable recording for a period covering the full lag chain.
 
+Rescue path when GCLID is lost: enhanced conversions for leads (hashed email as the join key) is the standard fallback for exactly the broken loops this skill finds - check eligibility before recommending a custom click-ID pipeline.
+
 ## Practical example
 
 A B2B services firm spends roughly $28K per month on Search with a target cost per lead of $90. Reported cost per lead is $76, which looks like a win. The sales director says almost none of the leads are worth calling.
@@ -244,3 +246,4 @@ List what was missing and which step could not be verified. Never describe an un
 - Do not present a cost per qualified lead as comparable to a cost per raw lead. State clearly which denominator each number uses.
 - Every lag figure and volume threshold in this skill is a heuristic. Say which one you adjusted for the account and why.
 - Do not describe deprecated formats as current. Call-only ads ended in February 2026, and Video Action and Discovery campaigns have been replaced by Demand Gen.
+- When a threshold in this skill does not fit the account's volume or vertical, say which one you adjusted and why.

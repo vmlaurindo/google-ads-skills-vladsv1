@@ -122,6 +122,24 @@ Examples:
 - `CRM - Qualified Lead - Offline Import`
 - `Ads - Call - Phone Extension`
 
+## Decision rules
+
+Every threshold below is a starting heuristic, not a Google rule. When one does not fit the account's volume or vertical, say which one you adjusted and why.
+
+Bidding-ready floors:
+
+- Primary conversion action needs ~30 conversions in the last 30 days per campaign for tCPA / tROAS to be well fed [platform guidance range - verify current docs]; below that, recommend a shallower primary action or consolidation before any bid strategy change.
+- One primary action per real business result; a second source for the same event (tag + import both primary) is a duplication finding at any volume.
+
+Expected divergence (GA4 vs Google Ads should NOT match):
+
+- A 20-40% count gap is normal - attribution model, window, and consent gating explain it [heuristic].
+- Direction reads: platform far above GA4 suggests duplication or view-through inflation; platform far below suggests lost click IDs, redirects stripping GCLID, or consent gating. The direction picks the next check.
+
+Post-fix proof (a fix is proven by counts, not configuration):
+
+- Dedup or import fixes are verified by a before/after count comparison over matching windows with the conversion lag excluded, plus a transaction-ID spot check for purchases. Screenshots of settings prove intent, not outcome.
+
 ## Practical example
 
 Lead-gen agency with $22K/month Google Ads spend, planning a switch to tCPA. Claude audits the tracking stack and surfaces: Form Submit tracked twice (Google Ads native tag and GA4 import both fire on the same submission), inflating reported conversions by ~38% and distorting bidding signals; missing transaction or lead ID prevents proper deduplication; primary conversion is set to Newsletter Signup (micro action, 4x volume of Free Trial Start) which means Smart Bidding optimizes toward low-quality leads; click-through window is 90 days while typical sales cycle is 14 days, stretching credit to early touchpoints. Issues table delivered: 3 high-priority fixes (deduplication, primary swap to Free Trial Start, attribution window adjustment to 30 days), 4 medium-priority (naming consistency, GA4 timezone alignment, legacy tag cleanup, consent mode verification). Verdict: account NOT ready for tCPA migration until duplication is resolved — would otherwise optimize toward inflated and noisy conversion data.
@@ -182,6 +200,14 @@ Include exact actions for:
 - CRM/offline imports,
 - naming cleanup,
 - post-fix QA.
+
+### Route to next
+
+Offline or CRM loop -> offline-conversion-import-audit-google-ads. Once the verdict is ready -> bidding-strategy-sanity-check-google-ads for strategy fit.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 

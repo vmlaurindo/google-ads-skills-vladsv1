@@ -132,6 +132,8 @@ Treat as **do not act** when:
 
 A low score is a symptom. Do not pause a keyword because of its score alone. Pause it because it loses money.
 
+Blank-components path: when component columns are empty on most of the spend tier (common on smaller accounts), do not stop at "insufficient data" for the whole account. Aggregate to the ad group level, judge the components that do exist, and use CTR-vs-expected and landing-page checks as proxies on the blank rows, labeled as proxies.
+
 ## Practical example
 
 An e-commerce account spends roughly $42K a month across Search. The client asks Claude to fix the 118 keywords sitting at Quality Score 4 or below.
@@ -192,6 +194,10 @@ For each cluster include:
 - Re-check components after 21 to 30 days, since they update on accumulated data rather than immediately.
 - Track CPC, CTR, conversion rate, and CPA per cluster, not the score alone.
 - State rollback conditions for each creative or page change.
+
+### Data gaps
+
+Name the exports or fields that were missing and which verdict each one would firm up.
 
 ## Guardrails
 
