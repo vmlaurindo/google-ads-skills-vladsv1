@@ -131,7 +131,19 @@ Recommend a **new page rather than a rewrite** when:
 
 Do not issue a verdict on a page you have not read in full, including the content below the fold and the form itself.
 
-Default weight sets by page job [heuristic]: lead gen form page - message match 30%, offer clarity 25%, friction 25%, trust 20%; ecommerce product page - offer/price clarity 30%, message match 25%, trust 25%, friction 20%. State which set was used or what replaced it. CVR comparisons per URL need ~200 clicks before they carry a claim [heuristic].
+Default weight sets over the seven scored dimensions [heuristic] - state which set was used or what replaced it:
+
+| Dimension | Lead gen form page | Ecommerce product page |
+|---|---:|---:|
+| Message match | 25% | 20% |
+| Keyword presence | 5% | 5% |
+| Intent alignment | 15% | 15% |
+| CTA clarity | 15% | 15% |
+| Trust and proof | 15% | 20% |
+| Mobile experience | 10% | 15% |
+| Form / checkout friction | 15% | 10% |
+
+CVR comparisons per URL need ~200 clicks before they carry a claim [heuristic].
 
 ## Practical example
 

@@ -71,7 +71,7 @@ If the user only has partial access, start with item level issues and the item I
 2. Confirm the catalogue size and how many items are currently active and serving, not merely uploaded. The gap between those two numbers is often the entire finding.
 3. Confirm the feed update mechanism and cadence. Price and availability drift is a function of update frequency.
 4. Confirm the conversion action and whether revenue values are passed. Feed segmentation for bidding is meaningless without value data.
-5. Note that automatically created assets and campaign-level broad match are subject to auto-upgrade to AI Max from September 2026, which increases how much Google infers from supplied data rather than from advertiser targeting. Feed quality becomes more load-bearing under that shift, not less.
+5. Note that Dynamic Search Ads, automatically created assets, and campaign-level broad match are subject to auto-upgrade to AI Max from September 2026, which increases how much Google infers from supplied data rather than from advertiser targeting. Feed quality becomes more load-bearing under that shift, not less.
 6. Exclude data inside the conversion lag window before judging any product's performance.
 
 ## Analysis workflow
@@ -94,7 +94,7 @@ Work in this order. Each layer constrains the ones below it.
 
 ### Layer 3: Title and description structure
 
-1. Assess whether titles lead with the terms a buyer would actually search, rather than an internal SKU name or a marketing phrase.
+1. Assess whether titles lead with the terms a buyer would actually search, rather than an internal SKU name or a marketing phrase. Score it, do not feel it - per title, mark four binary checks: (a) first 3 tokens contain the product type, (b) a differentiating attribute (size, color, model, material) appears before character 70, (c) no internal jargon or SKU code in the visible portion, (d) brand present where brand queries matter for this catalog. A title failing 2+ checks is a rewrite candidate; 10+ SKUs failing the same check is a feed-rule fix, not per-SKU edits [heuristic]. The "materially limiting" verdict for this layer requires rewrite candidates covering 20%+ of catalog revenue [heuristic].
 2. Check for a consistent title pattern within each product type. Inconsistency across a category is usually the cause of uneven delivery inside it.
 3. Check whether attributes that buyers search by, such as brand, model, size, colour, material, or pack quantity, appear in the title where relevant to the category.
 4. Assess description substance. A description that repeats the title adds nothing to matching.

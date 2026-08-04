@@ -97,9 +97,10 @@ Optional but useful:
 3. Calculate z-scores:
    - z = (observed value - baseline mean) / baseline standard deviation.
 4. Flag anomaly severity:
-   - mild: |z| >= 1.5,
-   - moderate: |z| >= 2.0,
-   - severe: |z| >= 3.0.
+   - within normal variance: |z| < 2 (verdict: monitor),
+   - investigate: |z| 2-3,
+   - significant: |z| > 3.
+   One ladder, the same one Decision rules and `../scripts/anomaly_scan.py` use.
 5. Compare anomaly period to baseline:
    - absolute change,
    - percent change,
@@ -175,7 +176,7 @@ Every threshold below is a starting heuristic, not a Google rule. When one does 
 Volume guards before any z-score is trusted:
 
 - Ratio metrics (CPA, CVR) on days below ~5 conversions are unreadable at daily grain; z-score cost and clicks daily, and judge conversion metrics at the weekly grain instead [heuristic].
-- A z-score needs the baseline too: fewer than 8 usable baseline days (or 3 same-weekday points) means no z-score, only a descriptive delta labeled as such.
+- A z-score needs the baseline too: fewer than 7 usable baseline days (or 3 same-weekday points, matching the script) means no z-score, only a descriptive delta labeled as such.
 - Same-weekday baseline is the default, not an option; a Monday is compared with Mondays.
 
 Severity to action:
@@ -191,7 +192,7 @@ For long daily exports, run `../scripts/anomaly_scan.py` to compute baselines, z
 
 ## Practical example
 
-E-commerce client, $28K/month Google Ads spend. User reports "CPA spiked yesterday" without clear cause. Claude builds 90-day baselines and runs z-score analysis on yesterday's metrics. Findings: account-level CPA jumped from $42 to $67 (z-score 2.7, severe), spend stable at $1,050, conversions dropped 38% day-over-day. Decomposition by segment: 60% of CPA increase from one campaign where mobile traffic share rose from 41% to 67% after a competitor disappeared from desktop auctions (mobile CVR is 4x lower in this account); 25% from broad match drift on three keywords that started matching competitor brand queries (CTR up, CVR down); 15% from new auction pressure during 9-11am window (CPC up 18%). Hypotheses ranked by evidence strength. Recommended next diagnostics: (1) check competitor activity in Auction Insights, (2) review search terms for the 3 broad keywords, (3) review mobile bid adjustment. Caveat flagged: data is within the 24-hour conversion lag window for ~22% of typical conversions; recheck in 48h before acting.
+E-commerce client, $28K/month Google Ads spend. User reports "CPA spiked yesterday" without clear cause. Claude builds 90-day baselines and runs z-score analysis on yesterday's metrics. Findings: account-level CPA jumped from $42 to $67 (z-score 2.7, investigate tier), spend stable at $1,050, conversions dropped 38% day-over-day. Decomposition by segment: 60% of CPA increase from one campaign where mobile traffic share rose from 41% to 67% after a competitor disappeared from desktop auctions (mobile CVR is 4x lower in this account); 25% from broad match drift on three keywords that started matching competitor brand queries (CTR up, CVR down); 15% from new auction pressure during 9-11am window (CPC up 18%). Hypotheses ranked by evidence strength. Recommended next diagnostics: (1) check competitor activity in Auction Insights, (2) review search terms for the 3 broad keywords, (3) review mobile bid adjustment. Caveat flagged: data is within the 24-hour conversion lag window for ~22% of typical conversions; recheck in 48h before acting.
 
 ## Output format
 

@@ -2,7 +2,7 @@
 
 A pack of 20 production-ready Claude Skills that help agencies, freelancers, and in-house performance marketers run rigorous Google Ads work: account triage, wasted spend, structure, search terms, Quality Score, impression share, conversion tracking, offline conversion imports, Shopping feed quality, anomaly detection and root-cause diagnosis, RSA copy, Performance Max, bidding, landing page match, competitive pressure, forecasting, scaling, and recurring reporting.
 
-Each skill is a self-contained `SKILL.md` with explicit triggers, required inputs, analysis workflow, decision rules, a practical example, output format, and guardrails. Drop them into Claude and they activate automatically when their use case matches the conversation.
+Each skill is a self-contained `SKILL.md` with explicit triggers, required inputs, analysis workflow, decision rules with unit-carrying thresholds (the RSA generator carries a mandatory verification pass instead), routing to the next skill, a practical example, output format, and guardrails. Drop them into Claude and they activate automatically when their use case matches the conversation.
 
 Full guide: [20 Claude Skills for Google Ads](https://adlume.co/blog/google-ads-claude-skills) explains the workflow behind this pack and how to use the skills in real Google Ads audits.
 
